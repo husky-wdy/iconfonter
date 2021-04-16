@@ -1,0 +1,67 @@
+{
+  "name": "iconfonter",
+  "version": "1.5.1",
+  "main": "index.js",
+  "repository": "git@github.com:fjc0k/Iconfonter.git",
+  "author": "fjc0k <fjc0kb@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npm run build && poi watch",
+    "build": "poi build && bestzip iconfonter.zip dist/*",
+    "release": "standard-version -a && git push --follow-tags origin master && npm run build && opn https://chrome.google.com/webstore/devconsole"
+  },
+  "standard-version": {
+    "scripts": {
+      "postbump": "ts-node scripts/updateVersion.ts && git add -A"
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": "io"
+  },
+  "eslintIgnore": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/base64-js": "^1.2.5",
+    "@types/chrome": "^0.0.89",
+    "@types/file-saver": "^2.0.0",
+    "@types/fs-extra": "^5.0.4",
+    "@types/js-cookie": "^2.2.0",
+    "@types/jszip": "^3.1.4",
+    "@types/prettier": "^1.19.1",
+    "@types/prismjs": "^1.9.0",
+    "@types/qs": "^6.5.1",
+    "@types/react": "^16.9.25",
+    "@types/react-copy-to-clipboard": "^4.2.6",
+    "@types/react-dom": "^16.9.5",
+    "bestzip": "^2.1.2",
+    "eslint": "^6.8.0",
+    "eslint-config-io": "^0.8.7",
+    "fs-extra": "^7.0.1",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "opn-cli": "^4.0.0",
+    "poi": "11.0.0-beta.6",
+    "standard-version": "^4.4.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.8.3",
+    "uglifyjs-webpack-plugin": "^2.0.1"
+  },
+  "dependencies": {
+    "antd": "^3.11.2",
+    "base64-js": "^1.3.0",
+    "change-case": "^4.1.1",
+    "file-saver": "^2.0.0",
+    "js-cookie": "^2.2.0",
+    "jszip": "^3.1.5",
+    "mini-svg-data-uri": "^1.0.2",
+    "prettier": "^2.0.2",
+    "prismjs": "^1.15.0",
+    "qs": "^6.5.2",
+    "react": "^16.13.1",
+    "react-copy-to-clipboard": "^5.0.1",
+    "react-dom": "^16.13.1",
+    "vtils": "^2.57.0"
+  }
+}
